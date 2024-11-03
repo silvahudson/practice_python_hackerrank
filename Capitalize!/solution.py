@@ -8,12 +8,17 @@ import sys
 
 # Complete the solve function below.
 def solve(s):
-    lst = s.split()
-    result = []
-    for i in lst:
-        j = i.capitalize()
-        result.append(j)
-    return ' '.join(result)
+    previous=" "
+    string=""
+    for i in s:
+        if previous==" ":
+            l=i.upper()
+            previous=i
+            string+=l
+            continue
+        previous=i
+        string+=i
+    return string
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
